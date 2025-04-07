@@ -1,17 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --color-crowshead-50: #f8f7ee;
-  --color-crowshead-100: #efedd2;
-  --color-crowshead-200: #e0dba8;
-  --color-crowshead-300: #cec376;
-  --color-crowshead-400: #bfad50;
-  --color-crowshead-500: #b09942;
-  --color-crowshead-600: #977b37;
-  --color-crowshead-700: #795d2f;
-  --color-crowshead-800: #664d2d;
-  --color-crowshead-900: #59422a;
-  --color-crowshead-950: #1a120b;
   --color-blackcurrant-50: #f4f4fa;
   --color-blackcurrant-100: #e8e7f2;
   --color-blackcurrant-200: #d6d4e9;
