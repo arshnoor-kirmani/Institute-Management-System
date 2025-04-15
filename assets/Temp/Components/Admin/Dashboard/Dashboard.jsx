@@ -15,9 +15,10 @@ import {
   Detective,
   UserFocus,
 } from "@phosphor-icons/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-
+import { DATABASE, STORAGE, userAuth } from "../../../app";
+import { Query } from "appwrite";
 export default function Dashboard() {
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<=== States Variables Start ===>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   const [dashboard_icon_size, setDashboard_icon_size] = useState(44);
@@ -27,9 +28,14 @@ export default function Dashboard() {
   const LoginActivetyArr = useSelector(
     (state) => state.dashboardSlice.LoginActivety
   );
-  const pendingStudents = useSelector(
-    (state) => state.dashboardSlice.UnpaidStudentData
-  );
+  const [pendingStudents, setPendingStudents] = useState([]);
+  // DATABASE.studentList()
+  //   .then((res) => {
+  //     setPendingStudents(res.documents);
+  //   })
+  //   .catch((err) => {
+  //     console.error(err);
+  //   });
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<=== States Variables End ===>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<=== Function Start ===>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -145,79 +151,83 @@ export default function Dashboard() {
           </ul>
         </div>
         <div id="students">
-          {pendingStudents?.map((student, index) => (
-            <div key={student.id} className="">
-              <ul className="size-full grid grid-cols-[25%_repeat(6,12.5%)] items-center py-1 text-blackcurrant-200">
-                <li className="grid grid-cols-[30%_70%] items-center px-2 pl-8 py-1 hover:scale-101  duration-200 linear cursor-pointer">
-                  <img
-                    src={student.profileImg}
-                    alt=""
-                    className="size-10 object-cover rounded-full"
-                  />
-                  {student.name}
-                </li>
-                <li className=" text-center py-1"> {student.id}</li>
-                <li className=" text-center py-1"> {student.course}</li>
-                <li className=" text-center py-1"> {student.pendingfees}</li>
-                <li className=" text-center py-1"> {student.rank}</li>
-                <li
-                  className={` text-center py-1 ${
-                    student.status ? "text-green-400" : "text-red-400"
-                  }`}
-                >
-                  {student.status ? "Active" : "Not Active"}
-                </li>
-                <li>
-                  <div className="flex gap-2 items-center justify-center cursor-pointer">
-                    <Printer
-                      size={dashboard_icon_size - 20}
-                      color={dashboard_icon_color}
-                      weight={dashboard_icon_weight}
-                      className="active:scale-95 duration-200 linear "
+          {pendingStudents > 0 ? (
+            pendingStudents.map((student, index) => (
+              <div key={student.$id} className="">
+                <ul className="size-full grid grid-cols-[25%_repeat(6,12.5%)] items-center py-1 text-blackcurrant-200">
+                  <li className="grid grid-cols-[30%_70%] items-center px-2 pl-8 py-1 hover:scale-101  duration-200 linear cursor-pointer">
+                    <img
+                      src={student.profile_img_id}
+                      alt=""
+                      className="size-10 object-cover rounded-full"
                     />
-                    <div
-                      className="relative"
-                      onClick={() => Show_Hide(`ActionOptions${index}`)}
-                    >
-                      <DotsThree
-                        size={dashboard_icon_size - 10}
+                    {student.full_name}
+                  </li>
+                  <li className=" text-center py-1"> {student.roll_no}</li>
+                  <li className=" text-center py-1"> {student.course}</li>
+                  <li className=" text-center py-1"> {student.pending_fees}</li>
+                  <li className=" text-center py-1"> {student.gender}</li>
+                  <li
+                    className={` text-center py-1 ${
+                      student.status ? "text-green-400" : "text-red-400"
+                    }`}
+                  >
+                    {student.status ? "Active" : "Not Active"}
+                  </li>
+                  <li>
+                    <div className="flex gap-2 items-center justify-center cursor-pointer">
+                      <Printer
+                        size={dashboard_icon_size - 20}
                         color={dashboard_icon_color}
                         weight={dashboard_icon_weight}
                         className="active:scale-95 duration-200 linear "
                       />
                       <div
-                        id={`ActionOptions${index}`}
-                        className="ActionOptions absolute size-25 top-8 right-3 rounded-md bg-blackcurrant-900 hidden"
+                        className="relative"
+                        onClick={() => Show_Hide(`ActionOptions${index}`)}
                       >
-                        <ul className="size-full grid py-1">
-                          <li className="text-center text-sm p-1 grid grid-cols-[50%_20%] items-center gap-4 border-b-1 border-blackcurrant-950">
-                            Remove
-                            <Trash size={20} color="#0d0c0e" weight="thin" />
-                          </li>
-                          <li className="text-center text-sm p-1 grid grid-cols-[50%_20%] items-center gap-4 border-b-1 border-blackcurrant-950">
-                            {student.status ? "Deactive" : "Active"}
-                            <Detective
-                              size={20}
-                              color="#0d0c0e"
-                              weight="thin"
-                            />
-                          </li>
-                          <li className="text-center text-sm p-1 grid grid-cols-[50%_20%] items-center gap-4">
-                            Profile
-                            <UserFocus
-                              size={20}
-                              color="#0d0c0e"
-                              weight="thin"
-                            />
-                          </li>
-                        </ul>
+                        <DotsThree
+                          size={dashboard_icon_size - 10}
+                          color={dashboard_icon_color}
+                          weight={dashboard_icon_weight}
+                          className="active:scale-95 duration-200 linear "
+                        />
+                        <div
+                          id={`ActionOptions${index}`}
+                          className="ActionOptions absolute size-25 top-8 right-3 rounded-md bg-blackcurrant-900 hidden"
+                        >
+                          <ul className="size-full grid py-1">
+                            <li className="text-center text-sm p-1 grid grid-cols-[50%_20%] items-center gap-4 border-b-1 border-blackcurrant-950">
+                              Remove
+                              <Trash size={20} color="#0d0c0e" weight="thin" />
+                            </li>
+                            <li className="text-center text-sm p-1 grid grid-cols-[50%_20%] items-center gap-4 border-b-1 border-blackcurrant-950">
+                              {student.status ? "Deactive" : "Active"}
+                              <Detective
+                                size={20}
+                                color="#0d0c0e"
+                                weight="thin"
+                              />
+                            </li>
+                            <li className="text-center text-sm p-1 grid grid-cols-[50%_20%] items-center gap-4">
+                              Profile
+                              <UserFocus
+                                size={20}
+                                color="#0d0c0e"
+                                weight="thin"
+                              />
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          ))}
+                  </li>
+                </ul>
+              </div>
+            ))
+          ) : (
+            <h1>No Unpaid Student</h1>
+          )}
         </div>
       </div>
       {/*<<<<<<<<<<<<<<<<<<<<<<<<<<===Unpaid Students Section End===>>>>>>>>>>>>>>>>>>>>>>>>*/}

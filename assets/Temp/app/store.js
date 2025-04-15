@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dashboardSlice from "./featchers/dashboardSlice";
+import { dashboardSlice } from "./index";
 import React from "react";
 
 export const store = configureStore({
