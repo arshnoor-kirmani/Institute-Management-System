@@ -37,7 +37,7 @@ export default function Footer() {
     ["Important Links", "UGC", "AICTE", "PCI", "NCTE", "BCI", "AYUSH", "CCIM"],
   ]);
   return (
-    <div className="w-screen h-fit bg-custom-2 flex flex-col items-center justify-center text-white px-3 py-1">
+    <div className="w-full h-fit bg-custom-2 flex flex-col items-center justify-center text-white px-3 py-1">
       <div className="w-full h-fit flex flex-col gap-4 md:flex-row items-center justify-between px-2 py-4">
         <div id="one" className="grid grid-rows-2 md:grid-rows-1  gap-4 w-80">
           <div id="logo" className=" size-full">

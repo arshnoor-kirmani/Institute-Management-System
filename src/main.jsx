@@ -8,7 +8,7 @@ import "./index.css";
 console.clear();
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <div className="w-screen h-screen bg-custom-5">
+    <div className="w-full h-screen">
       <Weblayout></Weblayout>
     </div>
   </Provider>

@@ -7,3 +7,17 @@
   --color-custom-4: #8d8d8d;
   --color-custom-5: #bcbcbc;
 }
+* {
+  @apply box-border;
+}
+.swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+}
+.swiper-pagination-bullet {
+  background: #4f46e5;
+}

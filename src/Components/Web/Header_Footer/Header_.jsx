@@ -44,7 +44,7 @@ export default function Header() {
     ["Blog"],
   ]);
   return (
-    <div className="w-screen h-20 bg-custom-2 flex ">
+    <div className="w-full h-20 bg-custom-2 flex ">
       <div id="logo" className="h-full w-fit px-2 flex items-center ">
         <Logo
           src="logo.png"
@@ -54,7 +54,7 @@ export default function Header() {
           height="auto"
         />
       </div>
-      <div id="nav" className="w-full hidden md:grid items-center px-2">
+      <div id="nav" className="w-full hidden md:grid items-center px-1">
         <div
           id="NevigationBtn"
           className="grid grid-cols-[45%_auto] items-center gap-1.5 w-full"
