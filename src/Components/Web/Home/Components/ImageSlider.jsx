@@ -6,7 +6,7 @@ export default function ImageSlider({ images }) {
       <img
         src={images[0]}
         alt={images[1]}
-        className="w-full h-full object-cover"
+        className="w-full h-90 object-cover rounded-lg"
       />
     </div>
   );
