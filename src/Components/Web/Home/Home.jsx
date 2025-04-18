@@ -107,7 +107,7 @@ export default function Home() {
       <HomeSecondSection />
       <CourseCategorySection courses={Courses} />
       {/* <HomeFourthSection cards={LifeCard} /> */}
-      <HomeFiveSection tranings={traningValue} placements={placements} />
+      {/* <HomeFiveSection tranings={traningValue} placements={placements} /> */}
     </main>
   );
 }
