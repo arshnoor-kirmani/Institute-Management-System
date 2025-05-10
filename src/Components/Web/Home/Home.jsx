@@ -5,7 +5,7 @@ import CourseCategorySection from "./Components/CourseCategorySection";
 import HomeFourthSection from "./Components/HomeFourthSection";
 import HomeFiveSection from "./Components/HomeFiveSection";
 import { Grains } from "@phosphor-icons/react";
-
+// Arshnoor
 export default function Home() {
   const [ImageUrls, setImageUrls] = useState([
     ["heroImg/b1.jpg", "FirstImage"],
