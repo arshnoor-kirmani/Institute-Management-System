@@ -1,0 +1,92 @@
+import { Users } from "@phosphor-icons/react";
+import React from "react";
+import ButtonComp from "./ButtonComp";
+
+export default function FormComponents() {
+  return (
+    <div className="">
+      <form action="" className="grid  gap-3">
+        <label htmlFor="name" className="grid grid-cols-[9%_91%] h-13 border-1">
+          <div className="border-r-1 flex justify-center items-center text-xl p-0.5 text-custom-600">
+            <Users weight="fill" />
+          </div>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            className="size-full px-2"
+            placeholder="Enter your Name"
+          />
+        </label>
+        <label htmlFor="name" className="grid grid-cols-[9%_91%] h-13 border-1">
+          <div className="border-r-1 flex justify-center items-center text-xl p-0.5 text-custom-600">
+            <Users weight="fill" />
+          </div>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            className="size-full px-2"
+            placeholder="Enter your Name"
+          />
+        </label>
+        <label htmlFor="name" className="grid grid-cols-[9%_91%] h-13 border-1">
+          <div className="border-r-1 flex justify-center items-center text-xl p-0.5 text-custom-600">
+            <Users weight="fill" />
+          </div>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            className="size-full px-2"
+            placeholder="Enter your Name"
+          />
+        </label>
+        <label htmlFor="name" className="grid grid-cols-[9%_91%] h-13 border-1">
+          <div className="border-r-1 flex justify-center items-center text-xl p-0.5 text-custom-600">
+            <Users weight="fill" />
+          </div>
+          <select name="depertment" id="depertment" className="px-2">
+            <option value="BCA">BCA</option>
+            <option value="BCA">BCA</option>
+            <option value="BCA">BCA</option>
+            <option value="BCA">BCA</option>
+            <option value="BCA">BCA</option>
+          </select>
+        </label>
+        <label htmlFor="name" className="grid grid-cols-[9%_91%] h-13 border-1">
+          <div className="border-r-1 flex justify-center items-center text-xl p-0.5 text-custom-600">
+            <Users weight="fill" />
+          </div>
+          <select name="depertment" id="depertment" className="px-2">
+            <option value="BCA">BCA</option>
+            <option value="BCA">BCA</option>
+            <option value="BCA">BCA</option>
+            <option value="BCA">BCA</option>
+            <option value="BCA">BCA</option>
+          </select>
+        </label>
+        <label
+          htmlFor="checkbox"
+          className=" flex justify-center items-center relative"
+        >
+          <input
+            type="checkbox"
+            id="checkbox"
+            className="mr-3 absolute top-2 left-1.5"
+          />
+          <p className="pl-7">
+            I authorise Hope Group of institution and its associates to contact
+            me with updates & notifications via email, SMS, Whtatsapp and Voice
+            Call. this contsent will override any registration for DNC/NDNC.
+          </p>
+        </label>
+        <ButtonComp
+          type="submit"
+          btntext="Enroll Now"
+          classnames="p-3 rounded-md cursor-pointer hover:bg-custom-700 border-1 transition-all duration-300 hover:text-custom-100 font-bold"
+        />
+      </form>
+    </div>
+  );
+}
