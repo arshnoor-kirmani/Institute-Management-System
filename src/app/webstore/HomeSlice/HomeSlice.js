@@ -110,6 +110,40 @@ const initialState = {
     { title: "E time", imgUrl: "icons/python.png" },
     { title: "Pin Clik", imgUrl: "icons/cplus.png" },
   ],
+  department_courses: {
+    "Faculty of Management": [
+      "Business Administration",
+      "Human Resource Management",
+      "Marketing",
+    ],
+    "Faculty of Commerce": ["Accounting", "Finance", "Business Law"],
+    "Faculty of Arts": ["English Literature", "History", "Psychology"],
+    "Faculty of Library and Information": [
+      "Library Science",
+      "Information Management",
+      "Archival Studies",
+    ],
+    "Faculty of Paramedical": ["Nursing", "Physiotherapy", "Radiology"],
+    "Faculty of Animation": ["2D Animation", "3D Animation", "Visual Effects"],
+    "Faculty of Science": ["Physics", "Chemistry", "Biology"],
+    "Faculty of Computer Applications": [
+      "Software Development",
+      "Web Development",
+      "Mobile App Development",
+    ],
+    "Faculty of Agriculture": ["Agronomy", "Horticulture", "Animal Science"],
+    "Faculty of Hotel Management": [
+      "Hospitality Management",
+      "Culinary Arts",
+      "Event Management",
+    ],
+    "Faculty of Mass Communications": [
+      "Journalism",
+      "Public Relations",
+      "Advertising",
+    ],
+    "Faculty of LAW": ["Corporate Law", "Criminal Law", "International Law"],
+  },
 };
 const HomeSlice = createSlice({
   name: "home",
