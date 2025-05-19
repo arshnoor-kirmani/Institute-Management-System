@@ -102,7 +102,7 @@ export default function Offical_Header() {
             btn_classes="bg-custom-200 md:px-2 md:py-3 md:text-md py-2 text-xs rounded-md text-nowrap cursor-pointer transition-all duration-300 ease-in-out active:scale-99 hover:bg-custom-500 hover:text-white hover:shadow-md"
           />
         </div>
-        <div id="NavBtn" className="size-full relative">
+        <div id="NavBtn" className="size-full relative z-100">
           {mobile_nav(NavBtnsValues)}
         </div>
       </div>

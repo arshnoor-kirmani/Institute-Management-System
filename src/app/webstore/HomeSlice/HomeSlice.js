@@ -144,6 +144,28 @@ const initialState = {
     ],
     "Faculty of LAW": ["Corporate Law", "Criminal Law", "International Law"],
   },
+  CertificateSection: [
+    {
+      title: "University Grants Commission (UGC)",
+      src: "certificate/certificate1.png",
+    },
+    {
+      title: "All India Council for Technical Education (AICTE)",
+      src: "certificate/certificate2.png",
+    },
+    {
+      title: "University Grants Commission (UGC)",
+      src: "certificate/certificate3.png",
+    },
+    {
+      title: "All India Council for Technical Education (AICTE)",
+      src: "certificate/certificate1.png",
+    },
+    {
+      title: "World Education Services (WES)",
+      src: "certificate/certificate2.png",
+    },
+  ],
 };
 const HomeSlice = createSlice({
   name: "home",

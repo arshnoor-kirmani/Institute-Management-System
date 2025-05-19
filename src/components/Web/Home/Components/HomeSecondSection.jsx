@@ -29,7 +29,7 @@ export default function HomeSecondSection({ studentImage }) {
             <ButtonComp
               type="button"
               btntext="Read more..."
-              classnames="text-sm size-full rounded-md cursor-pointer hover:bg-custom-700 border-2 border-custom-300 transition-all duration-300 hover:text-custom-100 font-bold active:scale-98 "
+              className="text-sm size-full rounded-md cursor-pointer hover:bg-custom-700 border-2 border-custom-300 transition-all duration-300 hover:text-custom-100 font-bold active:scale-98 "
             />
           </div>
         </div>

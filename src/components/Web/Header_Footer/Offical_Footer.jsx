@@ -7,11 +7,12 @@ export default function Offical_Footer() {
   return (
     <footer className="w-full h-fit bg-custom-800 flex flex-col items-center justify-center text-white px-3 py-1">
       <div className="w-full h-fit bg-custom-800 flex flex-col items-center justify-center text-white px-3 py-1">
-        <div className="w-full h-fit flex flex-col gap-4 md:flex-row items-center justify-between px-2 py-4">
+        <div className="w-full h-fit flex flex-col md:gap-10 gap-4 md:flex-row items-center justify-evenly px-2 py-4">
           <div id="one" className="grid grid-rows-2 md:grid-rows-1  gap-4 w-80">
             <div id="logo" className=" size-full">
               <div className="flex flex-col gap-2 items-center justify-center">
                 <Logo
+                  className="bg-custom-50 cursor-pointer"
                   src="logo.png"
                   type="inText"
                   alt="Hope Institue Logo"
@@ -70,11 +71,16 @@ export default function Offical_Footer() {
               </div>
             </div>
           </div>
-          <div id="two" className=" flex gap-3">
+          <div id="two" className=" flex gap-5 size-fit">
             <FooterLinksBox links={FooterLinks} />
           </div>
         </div>
-        <div id="Dev"></div>
+        <div id="Dev">
+          <h1>
+            <span className="text-xs"> Devloped by</span>{" "}
+            <b>Arshnoor Kirmani</b>
+          </h1>
+        </div>
       </div>
     </footer>
   );

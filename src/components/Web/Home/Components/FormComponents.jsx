@@ -2,14 +2,23 @@ import { Users } from "@phosphor-icons/react";
 import React, { useState } from "react";
 import ButtonComp from "./ButtonComp";
 import { useSelector } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 
 export default function FormComponents() {
   const departments = useSelector((state) => state.home.department_courses);
   const departmentKeys = Object.keys(departments);
   const [course, setCourse] = useState([]);
+  function FormHandeler(e) {}
   return (
     <div className="">
-      <form action="" className="grid  gap-3">
+      <form
+        action=""
+        className="grid  gap-3"
+        onSubmit={(e) => {
+          e.preventDefault();
+          FormHandeler(e.target);
+        }}
+      >
         <label htmlFor="name" className="grid grid-cols-[9%_91%] h-13 border-1">
           <div className="border-r-1 flex justify-center items-center text-xl p-0.5 text-custom-600">
             <Users weight="fill" />
@@ -69,7 +78,9 @@ export default function FormComponents() {
           >
             <option value="BCA">------Select Department------</option>
             {departmentKeys.map((e) => (
-              <option value={e}>{e}</option>
+              <option key={nanoid()} value={e}>
+                {e}
+              </option>
             ))}
           </select>
         </label>
@@ -83,7 +94,9 @@ export default function FormComponents() {
           <select name="course" id="course" className="px-2">
             <option value="BCA">------Select Course------</option>
             {course.map((e) => (
-              <option value={e}>{e}</option>
+              <option key={nanoid()} value={e}>
+                {e}
+              </option>
             ))}
           </select>
         </label>
@@ -102,11 +115,17 @@ export default function FormComponents() {
             Call. this contsent will override any registration for DNC/NDNC.
           </p>
         </label>
-        <ButtonComp
+        {/* <ButtonComp
           type="submit"
           btntext="Enroll Now"
-          classnames="p-3 rounded-md cursor-pointer hover:bg-custom-700 border-1 transition-all duration-300 hover:text-custom-100 font-bold"
-        />
+          className="p-3 rounded-md cursor-pointer hover:bg-custom-700 border-1 transition-all duration-300 hover:text-custom-100 font-bold"
+        /> */}
+        <button
+          type="submit"
+          className="p-3 rounded-md cursor-pointer hover:bg-custom-700 border-1 transition-all duration-300 hover:text-custom-100 font-bold"
+        >
+          Enroll Now
+        </button>
       </form>
     </div>
   );

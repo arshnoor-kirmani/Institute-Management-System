@@ -1,13 +1,5 @@
 import React from "react";
 
-export default function ButtonComp({ type, btntext, classnames }) {
-  return (
-    <button
-      type={type}
-      className={classnames}
-      onClick={(e) => e.preventDefault()}
-    >
-      {btntext}
-    </button>
-  );
+export default function ButtonComp(props) {
+  return <button {...props}>{props.btntext}</button>;
 }

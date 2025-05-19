@@ -48,7 +48,12 @@ function Card({
       <ButtonComp
         type="button"
         btntext={buttontext}
-        classnames="rounded-md cursor-pointer hover:bg-custom-700 border-1 transition-all duration-300 hover:text-custom-100"
+        onClick={() => {
+          const nav = document.getElementById("FloationEnrollContainer");
+          nav.classList.toggle("hidden");
+          nav.classList.toggle("flex");
+        }}
+        className="rounded-md cursor-pointer hover:bg-custom-700 border-1 transition-all duration-300 hover:text-custom-100"
       />
     </div>
   );
