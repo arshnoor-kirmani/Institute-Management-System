@@ -13,7 +13,7 @@ export default function HomeFourthSection({ cards }) {
       </div>
       <div className="w-full grid md:grid-cols-3 grid-cols-1 mt-3">
         {cards.map((e) => (
-          <Card id={nanoid()} src={e.src} title={e.title} />
+          <Card src={e.src} title={e.title} key={nanoid()} />
         ))}
       </div>
     </div>
@@ -21,10 +21,7 @@ export default function HomeFourthSection({ cards }) {
 }
 function Card({ id, src, title }) {
   return (
-    <div
-      key={id}
-      className="z-0 h-55 m-5 rounded-2xl overflow-hidden cursor-pointer group relative"
-    >
+    <div className="z-0 h-55 m-5 rounded-2xl overflow-hidden cursor-pointer group relative">
       <img
         src={src}
         alt=""

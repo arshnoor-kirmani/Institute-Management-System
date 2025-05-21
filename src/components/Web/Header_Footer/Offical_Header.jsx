@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 export default function Offical_Header() {
   const [headerMobile, setHeaderMobile] = useState(false);
   const NavBtnsValues = useSelector((state) => state.header.NavBtnsValues);
+  const ImportantBtns = useSelector((state) => state.header.ImportantBtns);
   return (
     <header className="relative bg-custom-600 w-full h-30 flex justify-between items-center z-10">
       <div className="relative w-70 h-full lg:py-2 p-1 py-2.5 lg:px-2 md:py-1 md:w-80 lg:w-70">
@@ -51,16 +52,10 @@ export default function Offical_Header() {
             </h2>
           </div>
           <Navigatonbtn
-            btns={[
-              "Downloads",
-              "Apply Now",
-              "Student Login",
-              "Login",
-              "Contact Us",
-            ]}
+            btns={ImportantBtns}
             div_classes={"grid grid-cols-5 gap-2 w-full text-custom-800"}
             btn_classes={
-              " text-xs px-1 py-1.5 text-nowrap rounded-md bg-custom-200 cursor-pointer transition-all duration-300 ease-in-out active:scale-99 hover:bg-custom-500 hover:text-white hover:shadow-md"
+              "size-full text-xs px-1 py-1.5 text-nowrap rounded-md bg-custom-200 cursor-pointer transition-all duration-300 ease-in-out active:scale-99 hover:bg-custom-500 hover:text-white hover:shadow-md"
             }
           />
         </div>

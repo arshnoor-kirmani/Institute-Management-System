@@ -1,4 +1,6 @@
+import { nanoid } from "@reduxjs/toolkit";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navigatonbtn({
   btns,
@@ -8,9 +10,9 @@ export default function Navigatonbtn({
   return (
     <div id="btn" className={div_classes}>
       {btns.map((text) => (
-        <button key={text} className={btn_classes}>
-          {text}
-        </button>
+        <Link key={nanoid()} to={`/${text.split(" ").join("")}`}>
+          <button className={btn_classes}>{text}</button>
+        </Link>
       ))}
     </div>
   );

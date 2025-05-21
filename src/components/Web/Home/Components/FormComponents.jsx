@@ -9,6 +9,7 @@ export default function FormComponents() {
   const departmentKeys = Object.keys(departments);
   const [course, setCourse] = useState([]);
   function FormHandeler(e) {}
+
   return (
     <div className="">
       <form
@@ -72,11 +73,12 @@ export default function FormComponents() {
             name="department"
             id="department"
             className="px-2"
-            onChange={(e) => {
-              setCourse(departments[e.target.value]);
-            }}
+            // onChange={(e) => {
+            //   setCourse(departments[e.target.value]);
+            //   e.currentTarget.value = e.target.value;
+            // }}
           >
-            <option value="BCA">------Select Department------</option>
+            <option value="">------Select Department------</option>
             {departmentKeys.map((e) => (
               <option key={nanoid()} value={e}>
                 {e}

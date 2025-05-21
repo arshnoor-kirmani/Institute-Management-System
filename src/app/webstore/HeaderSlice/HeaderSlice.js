@@ -40,6 +40,13 @@ const initialState = {
     ["Admission 2025"],
     ["Blog"],
   ],
+  ImportantBtns: [
+    "Downloads",
+    "Apply Now",
+    "Student Login",
+    "Login",
+    "Contact Us",
+  ],
 };
 const HeaderSlice = createSlice({
   name: "header",
